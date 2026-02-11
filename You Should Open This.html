@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+        <title>You Should Open This</title>
+        <style>
+            .grow{
+                transform: scale(1.3);
+                transition: transform 0.3s ease;
+            }
+
+            #growBtn{
+                transition: transform 0.5s ease;
+            }
+
+            .gif-overlay{
+                position: absolute;
+                inset: 0;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                background: rgba(0,0,0,0.25);
+                border-radius: 2rem;
+                z-index: 999;
+            }
+
+            .gif-overlay img{
+                max-width: 70%;
+                max-height: 70%;
+            }
+
+            .gif-overlay.show{
+                display: flex;
+            }
+        </style>
+    </head>
+    <body style="background: linear-gradient(to bottom, rgb(233, 179, 179), rgb(215, 155, 155), rgb(0, 0, 0)); min-height: 100vh;">
+        <div class="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center">
+            <div id="gifContainer" class="text-center mb-4" style="display:none;">
+                <img src="https://media.tenor.com/MzWlNGAdQPAAAAAM/steph-curry.gif" class="img-fluid" style="max-width:300px;">
+            </div>
+            <div class="card p-4 shadow rounded-5 position-relative" style="width: 600px; background: rgb(238, 200, 200);">
+                <div class="card-body">
+                    <h1 class="card-title text-center fw-bold">Hey Elva 💌</h1>
+                    <button type="button" class="btn btn-lg fw-bold d-grid gap-2 col-6 mx-auto" style="background: rgb(201, 154, 154);" onclick="Valentine_Message()" id="Valentine-Description">Click Me!</button>
+                    <div id="ContentArea"></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function Valentine_Message(){
+                document.getElementById("Valentine-Description").outerHTML = `
+                <div class="card p-3 shadow rounded-5 text-center" style="width: 100%;">
+                    <p class="h6 fw-bold">
+                        Just wanted to let you know that I enjoy every moment that we spend together. Whenever we play fortnite or even
+                        roblox or whenever we play those stupid little games like solitaire, contexto, and even wordle. You're honestly one of
+                        the funniest people I have ever met and im glad I got to meet someone as amazing as you. So what I am trying to say is if you
+                        want to be my valentine?? 😁
+                    </p>
+                </div>
+                `;
+
+                document.getElementById("ContentArea").innerHTML=`
+                <div class="d-flex justify-content-center gap-3 pt-4">
+                    <button type="button" class="btn rounded-pill fw-bold d-grid gap-2 col-3 mx-auto shadow" style="background: rgb(201,154,154);" id="growBtn" onclick="showGifOnce()">Yes 🤓</button>
+                    <button type="button" class="btn rounded-pill fw-bold d-grid gap-2 col-3 mx-auto shadow" style="background: rgb(83,81,81);" id="noBtn" onclick="growButton()">No 🤨</button>
+                </div>
+                <div class="text-center">
+                    <p class="h6">Pick Your Choice</p>
+                </div>
+                `
+            }
+
+            let yesScale = 1;
+            let noScale = 1;
+            const maxYesScale = 2.2;
+            const minNoScale = 0.1;
+
+            function growButton(){
+                const yesBtn = document.getElementById("growBtn");
+                const noBtn = document.getElementById("noBtn");
+
+
+                if(yesScale < maxYesScale){
+                    yesScale+=0.2;
+                    yesBtn.style.transform = `scale(${yesScale})`;
+                }
+                
+                if(noScale > minNoScale){
+                    noScale-=0.1;
+                    noBtn.style.transform=`scale(${noScale})`;
+                }
+            }
+
+            let gifShown = false;
+            function showGifOnce(){
+                if(gifShown) return;
+                gifShown = true;
+
+                document.getElementById("gifContainer").style.display="block";
+            }
+        </script>
+    </body>
+</html>
