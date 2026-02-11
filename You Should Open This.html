@@ -41,11 +41,11 @@
         </style>
     </head>
     <body style="background: linear-gradient(to bottom, rgb(233, 179, 179), rgb(215, 155, 155), rgb(0, 0, 0)); min-height: 100vh;">
-        <div class="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center py-4">
             <div id="gifContainer" class="text-center mb-4" style="display:none;">
-                <img src="https://media.tenor.com/MzWlNGAdQPAAAAAM/steph-curry.gif" class="img-fluid" style="max-width:300px;">
+                <img src="https://media.tenor.com/MzWlNGAdQPAAAAAM/steph-curry.gif" class="img-fluid" style="max-width:min(300px, 80vw); height: auto;">
             </div>
-            <div class="card p-4 shadow rounded-5 position-relative" style="width: 600px; background: rgb(238, 200, 200);">
+            <div class="card p-4 shadow rounded-5 position-relative" style="width: min(600px, 92vw); background: rgb(238, 200, 200);">
                 <div class="card-body">
                     <h1 class="card-title text-center fw-bold">Hey Elva 💌</h1>
                     <button type="button" class="btn btn-lg fw-bold d-grid gap-2 col-6 mx-auto" style="background: rgb(201, 154, 154);" onclick="Valentine_Message()" id="Valentine-Description">Click Me!</button>
@@ -69,8 +69,8 @@
 
                 document.getElementById("ContentArea").innerHTML=`
                 <div class="d-flex justify-content-center gap-3 pt-4">
-                    <button type="button" class="btn rounded-pill fw-bold d-grid gap-2 col-3 mx-auto shadow" style="background: rgb(201,154,154);" id="growBtn" onclick="showGifOnce()">Yes 🤓</button>
-                    <button type="button" class="btn rounded-pill fw-bold d-grid gap-2 col-3 mx-auto shadow" style="background: rgb(83,81,81);" id="noBtn" onclick="growButton()">No 🤨</button>
+                    <button type="button" class="btn rounded-pill fw-bold d-grid gap-2 col-5 col-md-3 mx-auto shadow" style="background: rgb(201,154,154);" id="growBtn" onclick="showGifOnce()">Yes 🤓</button>
+                    <button type="button" class="btn rounded-pill fw-bold d-grid gap-2 col-5 col-md-3 mx-auto shadow" style="background: rgb(83,81,81);" id="noBtn" onclick="growButton()">No 🤨</button>
                 </div>
                 <div class="text-center">
                     <p class="h6">Pick Your Choice</p>
